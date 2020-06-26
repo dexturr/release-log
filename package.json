@@ -1,0 +1,15 @@
+{
+  "name": "slack-release-action",
+  "version": "0.0.1",
+  "description": "Generate release log for ash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dexter Edwards",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^3.0.0"
+  }
+}

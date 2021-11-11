@@ -15,8 +15,8 @@ const run = async () => {
   try {
     const repo = core.getInput("repo");
     const githubToken = process.env.GITHUB_TOKEN;
-    const previousRelease = core.getInput("previousRelease");
-    const newRelease = core.getInput("nextRelease");
+    const previousRelease = core.getInput("previous-release");
+    const newRelease = core.getInput("next-release");
     const filter = core.getInput("filter")
       ? JSON.parse(core.getInput("filter"))
       : [];

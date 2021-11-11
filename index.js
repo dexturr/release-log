@@ -17,7 +17,9 @@ const run = async () => {
     const githubToken = process.env.GITHUB_TOKEN;
     const previousRelease = core.getInput("previousRelease");
     const newRelease = core.getInput("nextRelease");
-    const filter = core.getInput("filter");
+    const filter = core.getInput("filter")
+      ? JSON.parse(core.getInput("filter"))
+      : [];
 
     const lastVersionTag = `https://api.github.com/repos/vegaprotocol/token-frontend/git/matching-refs/tags/${previousRelease}`;
     const versionResponse = await fetch(lastVersionTag, {

@@ -1,18 +1,18 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "Hello World"
+description: "Greet someone and record the time"
 inputs:
   repo:
-    description: 'The repository to get the merged PRs for'
+    description: "The repository to get the merged PRs for"
     required: true
-  username: 
-    description: 'username'
+  previous-release:
+    description: "previous release"
     required: true
-  project: 
-    description: 'project'
+  next-release:
+    description: "next release"
     required: true
-  icon_url: 
-    description: 'icon_url'
-    required: true
+  filter:
+    description: "filter"
+    required: false
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: "node12"
+  main: "index.js"

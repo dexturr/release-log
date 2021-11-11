@@ -76,7 +76,7 @@ ${fixesText}
 ## Other improvements
 ${otherText}
 `;
-      core.setOutput("release-notes", message);
+      core.setOutput("notes", message);
     }
   } catch (error) {
     core.setFailed(error.message);

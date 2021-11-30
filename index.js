@@ -41,7 +41,7 @@ const run = async () => {
     });
     const commitJson = await commitResponse.json();
     const dateToday = new Date().toISOString().split("T")[0];
-    const prEndpoint = `https://api.github.com/search/issues?q=repo:${repo}+is:pr+is:merged+sort:merged-date+merged:>${commitJson.committer.date}`;
+    const prEndpoint = `https://api.github.com/search/issues?q=repo:${repo}+is:pr+is:merged+sort:merged-date+merged:>${commitJson.tagger.date}`;
     console.log(prEndpoint);
     const response = await fetch(prEndpoint, {
       headers: {

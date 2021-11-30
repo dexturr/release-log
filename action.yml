@@ -4,9 +4,6 @@ inputs:
   repo:
     description: "The repository to get the merged PRs for"
     required: true
-  previous-release:
-    description: "previous release"
-    required: true
   new-release:
     description: "next release"
     required: true

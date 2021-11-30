@@ -20,8 +20,9 @@ const run = async () => {
     const filter = core.getInput("filter")
       ? JSON.parse(core.getInput("filter"))
       : [];
-
+    console.log("Last version tag:", previousRelease);
     const lastVersionTag = `https://api.github.com/repos/vegaprotocol/token-frontend/git/matching-refs/tags/${previousRelease}`;
+
     const versionResponse = await fetch(lastVersionTag, {
       headers: {
         Authorization: `token ${githubToken}`,
@@ -32,6 +33,7 @@ const run = async () => {
     }
     const tagJson = await versionResponse.json();
     const commitUrl = tagJson[0].object.url;
+    console.log("Last commit URL:", commitUrl);
     const commitResponse = await fetch(commitUrl, {
       headers: {
         Authorization: `token ${githubToken}`,
